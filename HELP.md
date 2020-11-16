@@ -1,5 +1,11 @@
 # Getting Started
 
+To run the project:
+1) clone this repository
+2) set-up Docker and Docker compose
+3) run: docker-compose up --build
+4) go to http://localhost:8081/
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 

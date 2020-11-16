@@ -1,0 +1,28 @@
+version: "3.8"
+services:
+    app:
+        container_name: app-springboot-postgresql
+        image: app-springboot-postgresql
+        build: ./
+        ports:
+          - "8081:8081"
+        depends_on:
+          - postgresDb
+    postgresDb:
+        image: "postgres"
+        env_file:
+            - database.env
+        ports:
+          - "5432:5432"
+        volumes:
+            - database-data:/var/lib/postgresql/data/
+    adminer:
+        image: adminer
+        restart: always
+        ports:
+          - 8080:8080
+        depends_on:
+          - postgresDb
+volumes:
+  database-data:       
+               
